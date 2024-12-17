@@ -1,24 +1,31 @@
 import { Outlet, Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGauge } from "@fortawesome/free-solid-svg-icons";
-import { faBuilding } from "@fortawesome/free-solid-svg-icons";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { faPerson } from "@fortawesome/free-solid-svg-icons";
 
 export default function Layout(){
     return (
     <>
-    <div className="flex">
+    <div>
         <div>
-            <nav className=" bg-gray-300 h-screen w-60 pt-10">
-                <ul className="">
-                    <li className="font-bold text-center">
-                        EstateHub
+            <nav className=" bg-gray-300 w-100 p-5">
+                <ul className="flex">
+                    <li className="font-bold">
+                        ReactFlix
                     </li>
-                    <li>
-                        <Link to="/dashboard"><FontAwesomeIcon icon={faGauge} /> Dashboard</Link>
-                    </li>
-                    <li>
-                        <Link to="/heritage"><FontAwesomeIcon icon={faBuilding}/> Your heritage</Link>
-                    </li>
+                    <div className="flex ml-auto text-right space-x-4">
+                        <li>
+                            <Link to="/dashboard"><FontAwesomeIcon icon={faGauge} /> Accueil</Link>
+                        </li>
+                        <li>
+                            <Link to="/heritage"><FontAwesomeIcon icon={faStar} /> Favoris</Link>
+                        </li>
+                        <li>
+                            <Link to="/login"><FontAwesomeIcon icon={faPerson} /> Login</Link>
+                        </li>
+                    </div>
+
                 </ul>
             </nav>
         </div>

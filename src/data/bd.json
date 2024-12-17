@@ -1,0 +1,17 @@
+{
+    "heritage": [
+        { "id": "1", "type": "appartement", "size": "27", "floor": "0", "address": "12 rue Gonfroi", "purchase": "35 000", "rent": "390"},
+        { "id": "2", "type": "appartement", "size": "45", "floor": "2", "address": "34 avenue des Lilas", "purchase": "75 000", "rent": "550"},
+        { "id": "3", "type": "maison", "size": "120", "floor": "1", "address": "7 chemin de la Roseraie", "purchase": "250 000", "rent": "1 200"},
+        { "id": "4", "type": "studio", "size": "18", "floor": "3", "address": "22 rue des Érables", "purchase": "25 000", "rent": "320"},
+        { "id": "5", "type": "appartement", "size": "60", "floor": "4", "address": "8 boulevard des Champs", "purchase": "120 000", "rent": "800"}
+    ],
+
+    "auth": [
+        { "email": "desaintem.lucas@gmail.com", "password": "Lucas1234"},
+        { "email": "jean@gmail.com", "password": "azerty1234"}
+    ]
+}
+
+
+
