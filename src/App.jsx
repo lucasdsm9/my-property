@@ -31,32 +31,31 @@ function App() {
   };
 
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route
-            path="/dashboard"
-            element={
-              isLoggedIn ? (
-                <Dashboard user={user} onLogout={handleLogout} />
-              ) : (
-                <Navigate to="/login" />
-              )
-            }
-          />
-          <Route
-            path="/heritage"
-            element={
-              isLoggedIn ? <Heritage /> : <Navigate to="/login" />
-            }
-          />
-          <Route
-            path="/login"
-            element={<Login onLogin={handleLogin} />}
-          />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+<BrowserRouter>
+  <Routes>
+    <Route
+      path="/"
+      element={<Layout onLogout={handleLogout} isLoggedIn={isLoggedIn} />}
+    >
+      <Route
+        path="/dashboard"
+        element={
+          isLoggedIn ? (
+            <Dashboard user={user} onLogout={handleLogout} />
+          ) : (
+            <Navigate to="/login" />
+          )
+        }
+      />
+      <Route
+        path="/heritage"
+        element={isLoggedIn ? <Heritage /> : <Navigate to="/login" />}
+      />
+      <Route path="/login" element={<Login onLogin={handleLogin} />} />
+    </Route>
+  </Routes>
+</BrowserRouter>
+
   );
 }
 

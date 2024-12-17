@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Login({ onLogin }) {
   const [users, setUsers] = useState([]);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const navigate = useNavigate();
 
   const submit = (e) => {
     e.preventDefault();
@@ -19,11 +22,11 @@ export default function Login({ onLogin }) {
         u.password === password
     );
 
-    if(user) {
-      alert("Connexion OK");
+    if (user) {
       onLogin(user);
+      navigate("/dashboard");
     } else {
-      alert("Mail ou mdp incrrect");
+      alert("Mail ou mdp incorect");
     }
   };
 
@@ -43,10 +46,10 @@ export default function Login({ onLogin }) {
         console.error("Erreur :", error);
 
         const mockAuthData = [
-          { email: "desaintem.lucas@gmail.com", password: "Lucas1234" },
-          { email: "jean@gmail.com", password: "azerty1234" },
+          { email: "desaintem.lucas@gmail.com", password: "Lucas1234", name: "Lucas" },
+          { email: "jean@gmail.com", password: "azerty1234", name: "Jean" },
         ];
-        console.log("Données : ", mockAuthData);
+        console.log("Données :", mockAuthData);
         setUsers(mockAuthData);
       });
   }, []);
@@ -67,6 +70,7 @@ export default function Login({ onLogin }) {
             placeholder="Email"
           />
         </div>
+
         <div>
           <input
             type="password"
@@ -76,6 +80,7 @@ export default function Login({ onLogin }) {
             placeholder="Mot de passe"
           />
         </div>
+
         <div className="flex flex-col items-center">
           <input
             type="submit"
